@@ -1,8 +1,18 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
+
+    "settings": {
+        "import/resolver": {
+            "node":{
+                "extensions": [".ts", ".js"]
+            }
+        }
+    },
+
     "extends": [
         "airbnb-base"
     ],
@@ -15,7 +25,15 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "no-console": "off"
+        "no-console": "off",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "ts": "never"
+            }
+        ]
     }
 
 }
