@@ -29,6 +29,26 @@ async function saveBook(book:BookToSave) {
   return bookSaved;
 }
 
+async function updateBook(id:string, book: BookToSave) {
+  const bookUpdated = await Book.findByIdAndUpdate(id, book);
+
+  if (!bookUpdated) {
+    throw new Error("Couldn't update the book");
+  }
+
+  return bookUpdated;
+}
+
+async function deleteBook(id:string) {
+  const bookDeleted = await Book.findByIdAndDelete(id);
+
+  if (!bookDeleted) {
+    throw new Error("Couldn't update the book");
+  }
+
+  return bookDeleted;
+}
+
 async function getBook(id:string) {
   const book = await Book.findById(id);
   if (!book) {
@@ -37,4 +57,6 @@ async function getBook(id:string) {
   return book;
 }
 
-export { getAllBooks, getBook, saveBook };
+export {
+  getAllBooks, getBook, saveBook, updateBook, deleteBook,
+};

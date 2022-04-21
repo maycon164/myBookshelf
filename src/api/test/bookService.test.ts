@@ -1,6 +1,8 @@
 import { createSandbox } from 'sinon';
 import Book from '../model/BookModel';
-import { getAllBooks, getBook, saveBook } from '../service/bookService';
+import {
+  getAllBooks, getBook, saveBook, updateBook, deleteBook,
+} from '../service/bookService';
 
 const sandbox = createSandbox();
 const { stub } = sandbox;
@@ -65,5 +67,34 @@ describe('stack of tests BookService', () => {
     stub(Book, 'create').resolves(null);
 
     await expect(saveBook(bookMock)).rejects.toThrow(new Error("Couldn't save the book"));
+  });
+
+  /* TO DO:
+    improve this test to accept a specific parameter BookToSave
+       stub(Book, 'findByIdAndUpdate').withArgs(bookMock)
+       .resolves(bookMockSaved);
+  */
+  it('updateBook: should update a book object', async () => {
+    stub(Book, 'findByIdAndUpdate').resolves(bookMockSaved);
+
+    expect(await updateBook('1', bookMock)).toMatchObject(bookMockSaved);
+  });
+
+  it('updateBook: should be rejected', async () => {
+    stub(Book, 'findByIdAndUpdate').resolves(null);
+
+    await expect(updateBook('12345', bookMock)).rejects.toThrow(new Error("Couldn't update the book"));
+  });
+
+  it('deleteBook: should delete a book object', async () => {
+    stub(Book, 'findByIdAndDelete').withArgs('1').resolves(bookMockSaved);
+
+    expect(await deleteBook('1')).toMatchObject(bookMockSaved);
+  });
+
+  it('deleteBook: should be rejected', async () => {
+    stub(Book, 'findByIdAndDelete').withArgs('12345').resolves(null);
+
+    await expect(deleteBook('12345')).rejects.toThrow(new Error("Couldn't update the book"));
   });
 });
