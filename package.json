@@ -6,7 +6,8 @@
   "scripts": {
     "dev:server": "ts-node-dev --respawn --transpile-only ./src/index.ts",
     "test": "jest",
-    "fill-database": "ts-node-dev ./src/mock/fill-database.ts"
+    "fill-database": "ts-node-dev ./src/mock/fill-database.ts",
+    "swagger-autogen": "node ./src/swagger/swagger.js"
   },
   "author": "maycon huanca",
   "license": "ISC",
@@ -21,6 +22,8 @@
     "eslint-plugin-import": "^2.26.0",
     "jest": "^27.5.1",
     "sinon": "^13.0.2",
+    "swagger-autogen": "^2.21.1",
+    "swagger-ui-express": "^4.3.0",
     "ts-jest": "^27.1.4",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.3"
