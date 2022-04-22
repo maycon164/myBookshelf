@@ -2,10 +2,11 @@
   "name": "livraria-decor",
   "version": "1.0.0",
   "description": "a project to manage the books i'am reading e in the future to link my critics, review, comments about my lecture",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "dev:server": "ts-node-dev --respawn --transpile-only ./src/api/index.ts",
-    "test": "jest"
+    "dev:server": "ts-node-dev --respawn --transpile-only ./src/index.ts",
+    "test": "jest",
+    "fill-database": "ts-node-dev ./src/mock/fill-database.ts"
   },
   "author": "maycon huanca",
   "license": "ISC",
