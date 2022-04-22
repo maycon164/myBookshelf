@@ -1,0 +1,23 @@
+[  
+    {
+        "title": "Book 1",
+        "author": "Author 1",
+        "genre": "Fiction",
+        "pags": 100,
+        "image": "no image available"
+    },
+    {
+        "title": "Book 2",
+        "author": "Author 1",
+        "genre": "Fiction",
+        "pags": 100,
+        "image": "no image available"
+    },
+    {
+        "title": "Book 2",
+        "author": "Author 1",
+        "genre": "Fiction",
+        "pags": 100,
+        "image": "no image available"
+    }
+]

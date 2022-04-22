@@ -1,8 +1,8 @@
 import { createSandbox } from 'sinon';
-import Book from '../model/BookModel';
+import Book from '../api/model/BookModel';
 import {
   getAllBooks, getBook, saveBook, updateBook, deleteBook,
-} from '../service/bookService';
+} from '../api/service/bookService';
 
 const sandbox = createSandbox();
 const { stub } = sandbox;
