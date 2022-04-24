@@ -4,7 +4,8 @@
   "description": "a project to manage the books i'am reading e in the future to link my critics, review, comments about my lecture",
   "main": "index.ts",
   "scripts": {
-    "dev:server": "ts-node-dev --respawn --transpile-only ./src/index.ts",
+    "predev": "npm run swagger-autogen",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
     "test": "jest",
     "fill-database": "ts-node-dev ./src/mock/fill-database.ts",
     "swagger-autogen": "node ./src/swagger/swagger.js"

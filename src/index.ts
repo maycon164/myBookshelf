@@ -1,3 +1,5 @@
+/* eslint-disable function-paren-newline */
+/* eslint-disable comma-dangle */
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import swaggerFile from '../swagger_output.json';
@@ -9,7 +11,9 @@ connection();
 app.use(express.json());
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-app.use('/books', bookRoute);
+app.use('/books', bookRoute
+// #swagger.tags = ['Books']
+);
 
 app.get('/hello', (req, res) => {
   res.status(200).json({ message: 'Hello, World' });
