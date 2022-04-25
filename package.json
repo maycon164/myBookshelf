@@ -8,7 +8,7 @@
     "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
     "test": "jest",
     "fill-database": "ts-node-dev ./src/mock/fill-database.ts",
-    "swagger-autogen": "node ./src/swagger/swagger.js"
+    "swagger-autogen": "ts-node-dev ./src/swagger/swagger.ts"
   },
   "author": "maycon huanca",
   "license": "ISC",

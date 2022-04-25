@@ -1,5 +1,3 @@
-const swaggerAutogen = require('swagger-autogen')();
-
 const doc = {
   info: {
     title: 'MyBooks API',
@@ -36,7 +34,4 @@ const doc = {
   schemes: ['http'],
 };
 
-const outputFile = './swagger_output.json';
-const endpointsFile = ['/Users/maycon.huanca/Documents/projetos-estudos/app-livraria-decor/src/index.ts'];
-
-swaggerAutogen(outputFile, endpointsFile, doc);
+export default doc;
