@@ -2,7 +2,7 @@
 /* eslint-disable comma-dangle */
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
-import swaggerFile from '../swagger_output.json';
+import swaggerFile from './public/swagger_output.json';
 import bookRoute from './api/routes/bookRoute';
 import { connection } from './api/database/connection';
 
